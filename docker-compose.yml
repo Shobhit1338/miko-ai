@@ -1,0 +1,17 @@
+version: '3'
+services:
+  flask-app:
+    build: .
+    ports:
+      - 5000:5000
+    depends_on:
+      - db
+  db:
+    image: mysql:8.0
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: qwerty123
+      MYSQL_DATABASE: db123
+    volumes:
+      - ./data:/var/lib/mysql

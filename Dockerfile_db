@@ -1,8 +1,0 @@
-FROM mysql:latest
-
-ENV MYSQL_DATABASE your_database
-ENV MYSQL_USER your_username
-ENV MYSQL_PASSWORD your_password
-ENV MYSQL_ROOT_PASSWORD your_root_password
-
-COPY schema.sql /docker-entrypoint-initdb.d/
